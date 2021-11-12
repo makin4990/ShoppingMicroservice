@@ -3,8 +3,6 @@ using Discount.Grpc.Entities;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Discount.Grpc.Repositories
@@ -51,7 +49,7 @@ namespace Discount.Grpc.Repositories
                 (_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
             var coupon = await connection.QueryFirstOrDefaultAsync<Coupon>
                 ("SELECT * FROM COUPON WHERE ProductName = @ProductName", new { ProductName = productName });
-            if (coupon==null)
+            if (coupon == null)
             {
                 return new Coupon
                 { ProductName = "No Discount", Amount = 0, Description = "No discount desc" };

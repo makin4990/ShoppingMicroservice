@@ -5,8 +5,8 @@ namespace EventBus.Messages.Events
 {
     public class IntegrationBaseEvent
     {
-       
-        public IntegrationBaseEvent(Guid id,DateTime createdDate)
+
+        public IntegrationBaseEvent(Guid id, DateTime createdDate)
         {
             Id = id;
             CreatedDate = createdDate;

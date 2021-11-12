@@ -7,9 +7,6 @@ using Ordering.Application.Features.Orders.Commands.CheckOutOrder;
 using Ordering.Application.Models;
 using Ordering.Domain.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,7 +21,7 @@ namespace Ordering.Application.Features.Orders.Commands.CheckOutOrderCommandHand
 
         public CheckOutOrderCommandHandler(IOrderRepository orderRepository, IMapper mapper, IEmailService mailService, ILogger<CheckOutOrderCommandHandler> logger)
         {
-            _orderRepository = orderRepository?? throw new ArgumentNullException(nameof(orderRepository));
+            _orderRepository = orderRepository ?? throw new ArgumentNullException(nameof(orderRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _emailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ocelot.Claims;
 
 namespace OcelotApiGateway
 {
@@ -18,15 +19,19 @@ namespace OcelotApiGateway
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    config.AddJsonFile($"ocelot.{hostingContext.HostingEnvironment.EnvironmentName}.json",true,true);
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 })
-                .ConfigureLogging((hostingContext, loggingbuilder) =>
+                .ConfigureLogging((hostingContext, loggingBuilder) =>
                 {
-                    loggingbuilder.AddConfiguration(hostingContext.Configuration.GetSection(("logging")));
-                    loggingbuilder.AddConsole();
-                    loggingbuilder.AddDebug();
+                    loggingBuilder.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+                    loggingBuilder.AddConsole();
+                    loggingBuilder.AddDebug();
                 });
     }
 }
