@@ -34,16 +34,18 @@ services:
     restart: always
     ports:
       - "1433:1433"
+  
   identitydb:
     container_name: identitydb
     restart: always
     ports:
       - "1453:1433"
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Password12*  
     volumes:
       - identitydb_data:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password12*
+
   rabbitmq:
     container_name: rabbitmq
     restart: always
@@ -76,6 +78,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
+      - IdentityServerURL=http://identityserver
     depends_on:
       - catalogdb
     ports:
@@ -154,4 +157,16 @@ services:
       - ordering.api
     ports:
       - "8005:80"
+
+
+  identityserver:
+    container_name: identityserver
+    restart: on-failure
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:DefaultConnection=Server=identitydb;Database=IdentityDb; User=sa; Password=Password12*"
+    ports:
+      - "8006:80"
+    depends_on:
+      - identitydb
 

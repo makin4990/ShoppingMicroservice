@@ -26,6 +26,8 @@ services:
   identitydb:
     image: mcr.microsoft.com/mssql/server:2019-latest
 
+  
+
 
 
   catalog.api:
@@ -72,6 +74,14 @@ services:
       context: .
       dockerfile: ApiGateways/Shopping.Aggregator/Dockerfile
 
+  
+
+  identityserver:
+    image: ${DOCKER_REGISTRY-}identityserver
+    build:
+      context: .
+      dockerfile: IdentityServer/IdentityServer/Dockerfile
+
 volumes:
   mongo_data:
   portainer_data:
@@ -79,6 +89,8 @@ volumes:
   pgadmin_data:
   identitydb_data:
  
+
+
 
 
 

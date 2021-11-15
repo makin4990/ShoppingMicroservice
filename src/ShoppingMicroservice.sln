@@ -45,6 +45,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer\IdentityServer.csproj", "{34ECC03D-954B-47B6-82DB-085CC75C0996}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{EECB20E4-1A69-4AF4-B168-E27B890D6AED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetRunBasics", "WebApps\AspnetRunBasics\AspnetRunBasics.csproj", "{D82ED671-F3F8-4E46-BC39-8E1EF047C9D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,10 @@ Global
 		{34ECC03D-954B-47B6-82DB-085CC75C0996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34ECC03D-954B-47B6-82DB-085CC75C0996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34ECC03D-954B-47B6-82DB-085CC75C0996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D82ED671-F3F8-4E46-BC39-8E1EF047C9D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82ED671-F3F8-4E46-BC39-8E1EF047C9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82ED671-F3F8-4E46-BC39-8E1EF047C9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82ED671-F3F8-4E46-BC39-8E1EF047C9D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +132,7 @@ Global
 		{10390694-4E5C-417C-B088-029EA14E168B} = {BA15F7C1-A6AE-48FE-889E-BF39F1D56FA5}
 		{4E3617DE-27EB-470C-8AAB-90230BA1177F} = {20FF37BE-FF1C-49D5-B183-2F828CAE459D}
 		{34ECC03D-954B-47B6-82DB-085CC75C0996} = {70664886-B69A-40C8-B631-A80D5D5F6EEA}
+		{D82ED671-F3F8-4E46-BC39-8E1EF047C9D0} = {EECB20E4-1A69-4AF4-B168-E27B890D6AED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D49DA742-D991-4EB8-8882-7571895BCD31}
